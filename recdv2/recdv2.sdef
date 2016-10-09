@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<!--
+   recdv2.sdef
+   recdv2
+
+   Created by Takashi Mochizuki on 2016/08/14.
+   Copyright (c) 2016年 MyCometG3. All rights reserved.
+-->
+<dictionary title="recdv2 Terminology">
+    
+    <suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+        
+        <command name="quit" code="aevtquit" description="Quit the application.">
+            <cocoa class="NSQuitCommand"/>
+        </command>
+        
+        <command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+            <cocoa class="NSCountCommand"/>
+            <access-group identifier="*"/>
+            <direct-parameter type="specifier" requires-access="r" description="The objects to be counted."/>
+            <parameter name="each" code="kocl" type="type" optional="yes" description="The class of objects to be counted." hidden="yes">
+                <cocoa key="ObjectClass"/>
+            </parameter>
+            <result type="integer" description="The count."/>
+        </command>
+        
+        <command name="delete" code="coredelo" description="Delete an object.">
+            <cocoa class="NSDeleteCommand"/>
+            <access-group identifier="*"/>
+            <direct-parameter type="specifier" description="The object(s) to delete."/>
+        </command>
+        
+        <command name="duplicate" code="coreclon" description="Copy an object.">
+            <cocoa class="NSCloneCommand"/>
+            <access-group identifier="*"/>
+            <direct-parameter type="specifier" requires-access="r" description="The object(s) to copy."/>
+            <parameter name="to" code="insh" type="location specifier" description="The location for the new copy or copies." optional="yes">
+                <cocoa key="ToLocation"/>
+            </parameter>
+            <parameter name="with properties" code="prdt" type="record" description="Properties to set in the new copy or copies right away." optional="yes">
+                <cocoa key="WithProperties"/>
+            </parameter>
+        </command>
+        
+        <command name="exists" code="coredoex" description="Verify that an object exists.">
+            <cocoa class="NSExistsCommand"/>
+            <access-group identifier="*"/>
+            <direct-parameter type="any" requires-access="r" description="The object(s) to check."/>
+            <result type="boolean" description="Did the object(s) exist?"/>
+        </command>
+        
+        <command name="make" code="corecrel" description="Create a new object.">
+            <cocoa class="NSCreateCommand"/>
+            <access-group identifier="*"/>
+            <parameter name="new" code="kocl" type="type" description="The class of the new object.">
+                <cocoa key="ObjectClass"/>
+            </parameter>
+            <parameter name="at" code="insh" type="location specifier" optional="yes" description="The location at which to insert the object.">
+                <cocoa key="Location"/>
+            </parameter>
+            <parameter name="with data" code="data" type="any" optional="yes" description="The initial contents of the object.">
+                <cocoa key="ObjectData"/>
+            </parameter>
+            <parameter name="with properties" code="prdt" type="record" optional="yes" description="The initial values for properties of the object.">
+                <cocoa key="KeyDictionary"/>
+            </parameter>
+            <result type="specifier" description="The new object."/>
+        </command>
+        
+        <command name="move" code="coremove" description="Move an object to a new location.">
+            <cocoa class="NSMoveCommand"/>
+            <access-group identifier="*"/>
+            <direct-parameter type="specifier" requires-access="r" description="The object(s) to move."/>
+            <parameter name="to" code="insh" type="location specifier" description="The new location for the object(s).">
+                <cocoa key="ToLocation"/>
+            </parameter>
+        </command>
+        
+        <class name="application" code="capp" description="The application's top-level scripting object.">
+            <cocoa class="NSApplication"/>
+            <property name="name" code="pnam" type="text" access="r" description="The name of the application."/>
+            <property name="frontmost" code="pisf" type="boolean" access="r" description="Is this the active application?">
+                <cocoa key="isActive"/>
+            </property>
+            <property name="version" code="vers" type="text" access="r" description="The version number of the application."/>
+            <element type="window" access="r">
+                <cocoa key="orderedWindows"/>
+            </element>
+            <responds-to command="quit">
+                <cocoa method="handleQuitScriptCommand:"/>
+            </responds-to>
+        </class>
+        
+        <class name="window" code="cwin" description="A window.">
+            <cocoa class="NSWindow"/>
+            <property name="name" code="pnam" type="text" access="r" description="The title of the window.">
+                <cocoa key="title"/>
+            </property>
+            <property name="id" code="ID  " type="integer" access="r" description="The unique identifier of the window.">
+                <cocoa key="uniqueID"/>
+            </property>
+            <property name="index" code="pidx" type="integer" description="The index of the window, ordered front to back.">
+                <cocoa key="orderedIndex"/>
+            </property>
+            <property name="bounds" code="pbnd" type="rectangle" description="The bounding rectangle of the window.">
+                <cocoa key="boundsAsQDRect"/>
+            </property>
+            <property name="closeable" code="hclb" type="boolean" access="r" description="Does the window have a close button?">
+                <cocoa key="hasCloseBox"/>
+            </property>
+            <property name="miniaturizable" code="ismn" type="boolean" access="r" description="Does the window have a minimize button?">
+                <cocoa key="isMiniaturizable"/>
+            </property>
+            <property name="miniaturized" code="pmnd" type="boolean" description="Is the window minimized right now?">
+                <cocoa key="isMiniaturized"/>
+            </property>
+            <property name="resizable" code="prsz" type="boolean" access="r" description="Can the window be resized?">
+                <cocoa key="isResizable"/>
+            </property>
+            <property name="visible" code="pvis" type="boolean" description="Is the window visible right now?">
+                <cocoa key="isVisible"/>
+            </property>
+            <property name="zoomable" code="iszm" type="boolean" access="r" description="Does the window have a zoom button?">
+                <cocoa key="isZoomable"/>
+            </property>
+            <property name="zoomed" code="pzum" type="boolean" description="Is the window zoomed right now?">
+                <cocoa key="isZoomed"/>
+            </property>
+            <responds-to command="close">
+                <cocoa method="handleCloseScriptCommand:"/>
+            </responds-to>
+        </class>
+        
+    </suite>
+    
+    <!-- ###################################################################################################### -->
+    
+    <suite name="recdv2 Suite" code="RecD" description="recdv2 Script Suite">
+        <command name="restart session" code="RecDRest" description="Restart capture session.">
+            <cocoa class="CustomCommand"/>
+        </command>
+        
+        <command name="stop recording" code="RecDStop" description="Stop recording DV input.">
+            <cocoa class="CustomCommand"/>
+        </command>
+        
+        <command name="start recording" code="RecDStrt" description="Start recording DV input into QuickTime movie.">
+            <cocoa class="CustomCommand"/>
+            <parameter name="in" code="kfil" type="file" optional="yes" description="The file in which to write the recording.">
+                <cocoa key="fileURL"/>
+            </parameter>
+            <parameter name="limit in seconds" code="ksec" type="real" optional="yes" description="Limit the recording duration in seconds.">
+                <cocoa key="maxSeconds"/>
+            </parameter>
+            <parameter name="autoQuit" code="atQt" type="boolean" optional="yes" description="Quit application after recording is completed.">
+                <cocoa key="autoQuit"/>
+            </parameter>
+        </command>
+        
+        <class-extension extends="application">
+            <property name="currentSession" code="ASes" type="sessionInfo" access="r" description="Default capture session.">
+                <cocoa key="sessionItem" />
+            </property>
+            <property name="currentRecording" code="ARec" type="recordingInfo" access="r" description="Default recording information.">
+                <cocoa key="recordingItem" />
+            </property>
+            <property name="movie folder" code="AFld" type="file" access="rw" description="Default Movie folder.">
+                <cocoa key="folderURL"/>
+            </property>
+            <responds-to command="restart session">
+                <cocoa method="handleRestartSession:"/>
+            </responds-to>
+            <responds-to command="stop recording">
+                <cocoa method="handleStopRecord:"/>
+            </responds-to>
+            <responds-to command="start recording">
+                <cocoa method="handleStartRecord:"/>
+            </responds-to>
+        </class-extension>
+        
+        <class name="recordingInfo" code="RItm" description="A recording item." inherits="item">
+            <cocoa class="RDV2Recording" />
+            <property name="name" code="pnam" type="text" access="r" description="The name of the recording.">
+                <cocoa key="name" />
+            </property>
+            <property name="id" code="ID  " type="text" access="r" description="The unique identifier of the recording.">
+                <cocoa key="uniqueID" />
+            </property>
+            <property name="running" code="Rnng" type="boolean" access="r" description="Boolean if the recording is running.">
+                <cocoa key="running" />
+            </property>
+            <property name="duration in seconds" code="DSec" type="number" access="r" description="">
+                <cocoa key="durationInSec" />
+            </property>
+            <property name="start date" code="StrD" type="date" access="r" description="">
+                <cocoa key="startDate" />
+            </property>
+            <property name="end date" code="EndD" type="date" access="r" description="">
+                <cocoa key="endDate" />
+            </property>
+            <property name="file" code="file" type="file" access="r" description="Its location on disk, if it has one.">
+                <cocoa key="fileURL"/>
+            </property>
+        </class>
+        
+        <class name="sessionInfo" code="SItm" description="A capture session." inherits="item">
+            <cocoa class="RDV2Session" />
+            <property name="name" code="pnam" type="text" access="r" description="The name of the session">
+                <cocoa key="name" />
+            </property>
+            <property name="id" code="ID  " type="text" access="r" description="The unique identifier of the session.">
+                <cocoa key="uniqueID" />
+            </property>
+            <property name="running" code="Rnng" type="boolean" access="r" description="Boolean if the capture session is running.">
+                <cocoa key="running" />
+            </property>
+            <property name="using muxed" code="Muxd" type="boolean" access="rw" description="Boolean if the capture session is using the muxed source.">
+                <cocoa key="muxed" />
+            </property>
+            <property name="muxed source id" code="Msrc" type="text" access="rw" description="The uniqueID of current muxed source.">
+                <cocoa key="muxedSrcID" />
+            </property>
+            <property name="video source id" code="Vsrc" type="text" access="rw" description="The uniqueID of current video source.">
+                <cocoa key="videoSrcID" />
+            </property>
+            <property name="audio source id" code="Asrc" type="text" access="rw" description="The uniqueID of current audio source.">
+                <cocoa key="audioSrcID" />
+            </property>
+            <element type="muxedDeviceInfo" access="r">
+                <cocoa key="muxedSrcAvailable" />
+            </element>
+            <element type="videoDeviceInfo" access="r">
+                <cocoa key="videoSrcAvailable" />
+            </element>
+            <element type="audioDeviceInfo" access="r">
+                <cocoa key="audioSrcAvailable" />
+            </element>
+        </class>
+        
+        <class name="muxedDeviceInfo" code="mInf" description="AVCaptureDevice information for muxed source." inherits="deviceInfo">
+            <cocoa class="RDV2DeviceInfoMuxed" />
+        </class>
+        
+        <class name="videoDeviceInfo" code="vInf" description="AVCaptureDevice information for video source." inherits="deviceInfo">
+            <cocoa class="RDV2DeviceInfoVideo" />
+        </class>
+        
+        <class name="audioDeviceInfo" code="aInf" description="AVCaptureDevice information for audio source." inherits="deviceInfo">
+            <cocoa class="RDV2DeviceInfoAudio" />
+        </class>
+        
+        <class name="deviceInfo" code="dInf" description="AVCaptureDevice information." inherits="item">
+            <cocoa class="RDV2DeviceInfo" />
+            <property name="name" code="pnam" type="text" access="r" description="The name of the item.">
+                <cocoa key="name" />
+            </property>
+            <property name="id" code="ID  " type="text" access="r" description="The unique identifier of the item.">
+                <cocoa key="uniqueID" />
+            </property>
+            <property name="deviceUniqueID" code="unID" type="text" access="r" description="AVCaptureDevice.uniqueID">
+                <cocoa key="deviceUniqueID"/>
+            </property>
+            <property name="modelID" code="mdID" type="text" access="r" description="AVCaptureDevice.modelID">
+                <cocoa key="modelID"/>
+            </property>
+            <property name="localizedName" code="lclN" type="text" access="r" description="AVCaptureDevice.localizedName">
+                <cocoa key="localizedName"/>
+            </property>
+            <property name="manufacturer" code="mFct" type="text" access="r" description="AVCaptureDevice.manufacturer">
+                <cocoa key="manufacturer"/>
+            </property>
+            <property name="transportType" code="xPtT" type="text" access="r" description="AVCaptureDevice.transportType">
+                <cocoa key="transportType"/>
+            </property>
+            <property name="connected" code="cnTd" type="boolean" access="r" description="AVCaptureDevice.connected">
+                <cocoa key="connected"/>
+            </property>
+            <property name="inUseByAnotherApplication" code="inUs" type="boolean" access="r" description="AVCaptureDevice.inUseByAnotherApplication">
+                <cocoa key="inUseByAnotherApplication"/>
+            </property>
+            <property name="suspended" code="susP" type="boolean" access="r" description="AVCaptureDevice.suspended">
+                <cocoa key="suspended"/>
+            </property>
+        </class>
+
+    </suite>
+
+</dictionary>

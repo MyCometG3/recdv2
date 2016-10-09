@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16011DD11D7850E700627CDA /* PrefWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16011DD01D7850E700627CDA /* PrefWindowController.swift */; };
+		162835F01D67B71C0097C61D /* RDV2Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162835EF1D67B71C0097C61D /* RDV2Session.swift */; };
+		162835F21D67B72A0097C61D /* RDV2Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162835F11D67B72A0097C61D /* RDV2Recording.swift */; };
+		1650B2B81D6028710060B838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1650B2B71D6028710060B838 /* AppDelegate.swift */; };
+		1650B2BA1D6028710060B838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1650B2B91D6028710060B838 /* Assets.xcassets */; };
+		1650B2BD1D6028710060B838 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1650B2BB1D6028710060B838 /* MainMenu.xib */; };
+		1650B2C51D6028E80060B838 /* recdv2.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 1650B2C41D6028E80060B838 /* recdv2.sdef */; };
+		1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166343891D7803F200FE4F5D /* AVFoundation.framework */; };
+		1652C97E1D7AAF0F009C84B1 /* AVCaptureManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */; };
+		1652C97F1D7AAF0F009C84B1 /* AVCaptureManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16606B0D1D967EED002CFDAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606B0C1D967EED002CFDAF /* Constants.swift */; };
+		1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1663438B1D7803FC00FE4F5D /* Cocoa.framework */; };
+		1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		16F99E531D77B56700C00D4A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1652C97F1D7AAF0F009C84B1 /* AVCaptureManager.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		16011DD01D7850E700627CDA /* PrefWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefWindowController.swift; sourceTree = "<group>"; };
+		162835EF1D67B71C0097C61D /* RDV2Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2Session.swift; sourceTree = "<group>"; };
+		162835F11D67B72A0097C61D /* RDV2Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2Recording.swift; sourceTree = "<group>"; };
+		1650B2B41D6028710060B838 /* recdv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recdv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1650B2B71D6028710060B838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1650B2B91D6028710060B838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1650B2BC1D6028710060B838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1650B2BE1D6028710060B838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1650B2C41D6028E80060B838 /* recdv2.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = recdv2.sdef; sourceTree = "<group>"; };
+		1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVCaptureManager.framework; path = Frameworks/AVCaptureManager.framework; sourceTree = SOURCE_ROOT; };
+		16606B0C1D967EED002CFDAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		166343891D7803F200FE4F5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1663438B1D7803FC00FE4F5D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2DeviceInfo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1650B2B11D6028710060B838 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1652C97E1D7AAF0F009C84B1 /* AVCaptureManager.framework in Frameworks */,
+				1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */,
+				1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1650B2AB1D6028710060B838 = {
+			isa = PBXGroup;
+			children = (
+				166343901D78041D00FE4F5D /* Frameworks */,
+				1650B2B61D6028710060B838 /* recdv2 */,
+				1650B2B51D6028710060B838 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1650B2B51D6028710060B838 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1650B2B41D6028710060B838 /* recdv2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1650B2B61D6028710060B838 /* recdv2 */ = {
+			isa = PBXGroup;
+			children = (
+				16606B0C1D967EED002CFDAF /* Constants.swift */,
+				1650B2B71D6028710060B838 /* AppDelegate.swift */,
+				162835EF1D67B71C0097C61D /* RDV2Session.swift */,
+				162835F11D67B72A0097C61D /* RDV2Recording.swift */,
+				1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */,
+				16011DD01D7850E700627CDA /* PrefWindowController.swift */,
+				1650B2C41D6028E80060B838 /* recdv2.sdef */,
+				1650B2B91D6028710060B838 /* Assets.xcassets */,
+				1650B2BE1D6028710060B838 /* Info.plist */,
+				1650B2BB1D6028710060B838 /* MainMenu.xib */,
+			);
+			path = recdv2;
+			sourceTree = "<group>";
+		};
+		166343901D78041D00FE4F5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */,
+				1663438B1D7803FC00FE4F5D /* Cocoa.framework */,
+				166343891D7803F200FE4F5D /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1650B2B31D6028710060B838 /* recdv2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1650B2C11D6028710060B838 /* Build configuration list for PBXNativeTarget "recdv2" */;
+			buildPhases = (
+				1650B2B01D6028710060B838 /* Sources */,
+				1650B2B11D6028710060B838 /* Frameworks */,
+				1650B2B21D6028710060B838 /* Resources */,
+				16F99E531D77B56700C00D4A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = recdv2;
+			productName = recdv2;
+			productReference = 1650B2B41D6028710060B838 /* recdv2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1650B2AC1D6028710060B838 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Takashi Mochizuki";
+				TargetAttributes = {
+					1650B2B31D6028710060B838 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 1650B2AF1D6028710060B838 /* Build configuration list for PBXProject "recdv2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1650B2AB1D6028710060B838;
+			productRefGroup = 1650B2B51D6028710060B838 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1650B2B31D6028710060B838 /* recdv2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1650B2B21D6028710060B838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1650B2BA1D6028710060B838 /* Assets.xcassets in Resources */,
+				1650B2C51D6028E80060B838 /* recdv2.sdef in Resources */,
+				1650B2BD1D6028710060B838 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1650B2B01D6028710060B838 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162835F21D67B72A0097C61D /* RDV2Recording.swift in Sources */,
+				162835F01D67B71C0097C61D /* RDV2Session.swift in Sources */,
+				16011DD11D7850E700627CDA /* PrefWindowController.swift in Sources */,
+				1650B2B81D6028710060B838 /* AppDelegate.swift in Sources */,
+				1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */,
+				16606B0D1D967EED002CFDAF /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1650B2BB1D6028710060B838 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1650B2BC1D6028710060B838 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1650B2BF1D6028710060B838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1650B2C01D6028710060B838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1650B2C21D6028710060B838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/recdv2",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = recdv2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycometg3.recdv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1650B2C31D6028710060B838 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/recdv2",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = recdv2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycometg3.recdv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1650B2AF1D6028710060B838 /* Build configuration list for PBXProject "recdv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1650B2BF1D6028710060B838 /* Debug */,
+				1650B2C01D6028710060B838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1650B2C11D6028710060B838 /* Build configuration list for PBXNativeTarget "recdv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1650B2C21D6028710060B838 /* Debug */,
+				1650B2C31D6028710060B838 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1650B2AC1D6028710060B838 /* Project object */;
+}
