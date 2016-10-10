@@ -1,0 +1,65 @@
+## Appendix : Scripting
+
+#### Recording with default folder, default name (date/time)
+
+    tell application "recdv2"
+      start recording
+    end tell
+
+    tell application "recdv2"
+      stop recording
+    end tell
+
+#### Recording with specified file path
+
+    tell application "recdv2"
+      start recording in POSIX file "/Users/you/Desktop/a.mov"
+    end tell
+
+    tell application "recdv2"
+      start recording in file "El Capitan:Users:you:Desktop:b.mov"
+    end tell
+
+#### Recording with duration limit, and Auto Quit
+
+    tell application "recdv2"
+      start recording limit in seconds 60 with autoQuit
+    end tell
+
+#### Query current session and devices
+
+    tell application "recdv2"
+    	properties of currentSession
+    end tell
+
+    tell application "recdv2"
+    	using muxed of currentSession
+    end tell
+
+    tell application "recdv2"
+    	repeat with curItem in muxedDeviceInfos of currentSession
+    		properties of curItem
+    	end repeat
+    	repeat with curItem in videoDeviceInfos of currentSession
+    		properties of curItem
+    	end repeat
+    	repeat with curItem in audioDeviceInfos of currentSession
+    		properties of curItem
+    	end repeat
+    end tell
+
+
+#### Query current recording
+
+    tell application "recdv2"
+    	properties of currentRecording
+    end tell
+
+    tell application "recdv2"
+      duration in seconds of currentRecording'
+      start date of currentRecording'
+      end date of currentRecording'
+      file of currentRecording'
+    end tell
+
+Copyright © 2016年 MyCometG3. All rights reserved.
