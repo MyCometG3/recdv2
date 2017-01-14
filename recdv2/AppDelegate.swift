@@ -67,9 +67,9 @@ extension NSApplication {
         
         // Post notification with userInfo
         let userInfo : [String:Any] = [
-            Keys.fileURL : fileURL,
-            Keys.maxSeconds : maxSeconds,
-            Keys.autoQuit : autoQuit
+            Keys.fileURL : fileURL as Any,
+            Keys.maxSeconds : maxSeconds as Any,
+            Keys.autoQuit : autoQuit as Any
         ]
         
         let notification = Notification(name: .handleStartRecordingKey,
