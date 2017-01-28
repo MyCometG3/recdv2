@@ -26,6 +26,18 @@
       start recording limit in seconds 60 with autoQuit
     end tell
 
+#### Get/Set preview state for Audio/Video
+
+    tell application "recdv2"
+      set audioPreview to true
+      get audioPreview
+    end tell
+
+    tell application "recdv2"
+      set videoPreview to false
+      get videoPreview
+    end tell
+
 #### Query current session and devices
 
     tell application "recdv2"
@@ -62,4 +74,4 @@
       file of currentRecording'
     end tell
 
-Copyright © 2016年 MyCometG3. All rights reserved.
+Copyright © 2016-2017年 MyCometG3. All rights reserved.
