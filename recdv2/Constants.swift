@@ -70,6 +70,8 @@ enum Keys {
     static let sessionItem = "sessionItem"
     static let recordingItem = "recordingItem"
     static let folderURL = "folderURL"
+    static let useVideoPreview = "useVideoPreview"
+    static let useAudioPreview = "useAudioPreview"
     
     static let aspectRatio = "aspectRatio"
     static let scale = "scale"

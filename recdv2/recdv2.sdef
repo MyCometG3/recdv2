@@ -168,6 +168,12 @@
             <property name="movie folder" code="AFld" type="file" access="rw" description="Default Movie folder.">
                 <cocoa key="folderURL"/>
             </property>
+            <property name="videoPreview" code="AVPr" type="boolean" access="rw" description="Preview Video state.">
+                <cocoa key="useVideoPreview"/>
+            </property>
+            <property name="audioPreview" code="AAPr" type="boolean" access="rw" description="Preview Audio state.">
+                <cocoa key="useAudioPreview"/>
+            </property>
             <responds-to command="restart session">
                 <cocoa method="handleRestartSession:"/>
             </responds-to>

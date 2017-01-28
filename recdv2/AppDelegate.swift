@@ -113,7 +113,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
     override func application(_ sender: NSApplication, delegateHandlesKey key: String) -> Bool {
         // print("\(#file) \(#line) \(#function)")
         
-        let supportedParameter = [Keys.sessionItem, Keys.recordingItem, Keys.folderURL]
+        let supportedParameter = [Keys.sessionItem, Keys.recordingItem, Keys.folderURL,
+                                  Keys.useVideoPreview, Keys.useAudioPreview]
         if supportedParameter.contains(key) {
             // print("- delegate handles: \(key)")
             return true
@@ -136,6 +137,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
     var folderURL: URL? {
         get { return movieFolder() }
         set { self.defaults.set(newValue, forKey: Keys.movieFolder) }
+    }
+    
+    var useVideoPreview: Bool {
+        get { return !defaults.bool(forKey: Keys.showAlternate) }
+        set { defaults.set(!newValue, forKey: Keys.showAlternate) }
+    }
+    var useAudioPreview: Bool {
+        get { return !defaults.bool(forKey: Keys.forceMute) }
+        set { defaults.set(!newValue, forKey: Keys.forceMute) }
     }
     
     func registerObserverForScriptingSupport() {
