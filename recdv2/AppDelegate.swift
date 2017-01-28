@@ -141,11 +141,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
     
     var useVideoPreview: Bool {
         get { return !defaults.bool(forKey: Keys.showAlternate) }
-        set { defaults.set(!newValue, forKey: Keys.showAlternate) }
+        set {
+            defaults.set(!newValue, forKey: Keys.showAlternate)
+            setScale(-1)                        // Update Popup Menu Selection
+        }
     }
     var useAudioPreview: Bool {
         get { return !defaults.bool(forKey: Keys.forceMute) }
-        set { defaults.set(!newValue, forKey: Keys.forceMute) }
+        set {
+            defaults.set(!newValue, forKey: Keys.forceMute)
+            setVolume(-1)                       // Update Popup Menu Selection
+        }
     }
     
     func registerObserverForScriptingSupport() {
