@@ -411,13 +411,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
     @IBAction func togglePreviewAudio(_ sender: AnyObject) {
         // print("\(#file) \(#line) \(#function)")
         
-        setVolume(-1)                       // Update Popup Menu Selection
+        DispatchQueue.main.async(execute: {[unowned self] in
+            self.setVolume(-1)                       // Update Popup Menu Selection
+        })
     }
     
     @IBAction func togglePreviewVideo(_ sender: AnyObject) {
         // print("\(#file) \(#line) \(#function)")
         
-        setScale(-1)                        // Update Popup Menu Selection
+        DispatchQueue.main.async(execute: {[unowned self] in
+            self.setScale(-1)                        // Update Popup Menu Selection
+        })
     }
     
     @IBAction func toggleRecording(_ sender: AnyObject) {

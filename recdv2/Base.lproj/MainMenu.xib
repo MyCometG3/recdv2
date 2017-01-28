@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -570,6 +571,34 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Preview" id="n0X-Q2-vMe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Preview" id="BTt-2y-p0W">
+                                    <items>
+                                        <menuItem title="Video" keyEquivalent="i" id="ZD4-55-UzK">
+                                            <connections>
+                                                <action selector="togglePreviewVideo:" target="Voe-Tx-rLC" id="aBd-m6-Sw3"/>
+                                                <binding destination="33a-oK-DCZ" name="value" keyPath="values.showAlternate" id="Jq2-26-kPl">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Audio" keyEquivalent="u" id="ON3-5y-4by">
+                                            <connections>
+                                                <action selector="togglePreviewAudio:" target="Voe-Tx-rLC" id="dMP-Jg-Nff"/>
+                                                <binding destination="33a-oK-DCZ" name="value" keyPath="values.forceMute" id="BuK-oj-vdL">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="GB6-cW-q8f"/>
                         </items>
                     </menu>
                 </menuItem>
@@ -611,7 +640,7 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="305" y="797"/>
+            <point key="canvasLocation" x="198" y="686"/>
         </menu>
         <window title="recdv2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="QvC-M9-y7g" userLabel="Preview Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
