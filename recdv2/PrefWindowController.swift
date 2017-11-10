@@ -31,7 +31,7 @@
 
 import Cocoa
 
-@objc(PreferencesController)
+@objcMembers
 class PreferencesController: NSViewController {
     @IBOutlet weak var devMuxedArrayController: NSArrayController!
     @IBOutlet weak var devVideoArrayController: NSArrayController!

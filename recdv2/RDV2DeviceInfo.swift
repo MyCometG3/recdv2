@@ -35,11 +35,11 @@ import Cocoa
 // MARK: - Cocoa scripting support; for Script class RDV2DeviceInfo and subclasses
 /* ======================================================================================== */
 
-@objc (RDV2DeviceInfoMuxed)
+@objcMembers
 class RDV2DeviceInfoMuxed: RDV2DeviceInfo {
     override var name: String {
         get {
-            if super.name.characters.count > 0 {
+            if super.name.count > 0 {
                 return super.name
             }
             if let localized = super.localizedName {
@@ -52,11 +52,11 @@ class RDV2DeviceInfoMuxed: RDV2DeviceInfo {
     }
 }
 
-@objc (RDV2DeviceInfoVideo)
+@objcMembers
 class RDV2DeviceInfoVideo: RDV2DeviceInfo {
     override var name: String {
         get {
-            if super.name.characters.count > 0 {
+            if super.name.count > 0 {
                 return super.name
             }
             if let localized = super.localizedName {
@@ -69,11 +69,11 @@ class RDV2DeviceInfoVideo: RDV2DeviceInfo {
     }
 }
 
-@objc (RDV2DeviceInfoAudio)
+@objcMembers
 class RDV2DeviceInfoAudio: RDV2DeviceInfo {
     override var name: String {
         get {
-            if super.name.characters.count > 0 {
+            if super.name.count > 0 {
                 return super.name
             }
             if let localized = super.localizedName {
@@ -86,7 +86,7 @@ class RDV2DeviceInfoAudio: RDV2DeviceInfo {
     }
 }
 
-@objc (RDV2DeviceInfo)
+@objcMembers
 class RDV2DeviceInfo: NSObject {
     /* ============================================================================== */
     

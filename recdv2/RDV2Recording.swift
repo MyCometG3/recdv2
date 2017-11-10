@@ -35,7 +35,7 @@ import Cocoa
 // MARK: - Cocoa scripting support; for Script class RDV2Recording
 /* ======================================================================================== */
 
-@objc (RDV2Recording)
+@objcMembers
 class RDV2Recording: NSObject {
     /* ============================================================================== */
     

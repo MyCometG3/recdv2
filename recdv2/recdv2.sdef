@@ -138,15 +138,15 @@
     
     <suite name="recdv2 Suite" code="RecD" description="recdv2 Script Suite">
         <command name="restart session" code="RecDRest" description="Restart capture session.">
-            <cocoa class="CustomCommand"/>
+            <cocoa class="recdv2.CustomCommand"/>
         </command>
         
         <command name="stop recording" code="RecDStop" description="Stop recording DV input.">
-            <cocoa class="CustomCommand"/>
+            <cocoa class="recdv2.CustomCommand"/>
         </command>
         
         <command name="start recording" code="RecDStrt" description="Start recording DV input into QuickTime movie.">
-            <cocoa class="CustomCommand"/>
+            <cocoa class="recdv2.CustomCommand"/>
             <parameter name="in" code="kfil" type="file" optional="yes" description="The file in which to write the recording.">
                 <cocoa key="fileURL"/>
             </parameter>
@@ -186,7 +186,7 @@
         </class-extension>
         
         <class name="recordingInfo" code="RItm" description="A recording item." inherits="item">
-            <cocoa class="RDV2Recording" />
+            <cocoa class="recdv2.RDV2Recording" />
             <property name="name" code="pnam" type="text" access="r" description="The name of the recording.">
                 <cocoa key="name" />
             </property>
@@ -211,7 +211,7 @@
         </class>
         
         <class name="sessionInfo" code="SItm" description="A capture session." inherits="item">
-            <cocoa class="RDV2Session" />
+            <cocoa class="recdv2.RDV2Session" />
             <property name="name" code="pnam" type="text" access="r" description="The name of the session">
                 <cocoa key="name" />
             </property>
@@ -245,19 +245,19 @@
         </class>
         
         <class name="muxedDeviceInfo" code="mInf" description="AVCaptureDevice information for muxed source." inherits="deviceInfo">
-            <cocoa class="RDV2DeviceInfoMuxed" />
+            <cocoa class="recdv2.RDV2DeviceInfoMuxed" />
         </class>
         
         <class name="videoDeviceInfo" code="vInf" description="AVCaptureDevice information for video source." inherits="deviceInfo">
-            <cocoa class="RDV2DeviceInfoVideo" />
+            <cocoa class="recdv2.RDV2DeviceInfoVideo" />
         </class>
         
         <class name="audioDeviceInfo" code="aInf" description="AVCaptureDevice information for audio source." inherits="deviceInfo">
-            <cocoa class="RDV2DeviceInfoAudio" />
+            <cocoa class="recdv2.RDV2DeviceInfoAudio" />
         </class>
         
         <class name="deviceInfo" code="dInf" description="AVCaptureDevice information." inherits="item">
-            <cocoa class="RDV2DeviceInfo" />
+            <cocoa class="recdv2.RDV2DeviceInfo" />
             <property name="name" code="pnam" type="text" access="r" description="The name of the item.">
                 <cocoa key="name" />
             </property>

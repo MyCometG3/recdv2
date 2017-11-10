@@ -35,7 +35,7 @@ import Cocoa
 // MARK: - Cocoa scripting support; for Script class RDV2Session
 /* ======================================================================================== */
 
-@objc (RDV2Session)
+@objcMembers
 class RDV2Session: NSObject {
     /* ============================================================================== */
     
