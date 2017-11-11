@@ -44,10 +44,17 @@ class RDV2Session: NSObject {
     
     override var objectSpecifier: NSScriptObjectSpecifier? {
         let appDescription = NSApp.classDescription as! NSScriptClassDescription
-        let specifier = NSUniqueIDSpecifier(containerClassDescription: appDescription,
+        //let specifier = NSUniqueIDSpecifier(containerClassDescription: appDescription,
+        //                                    containerSpecifier: nil,
+        //                                    key: "sessionItem",
+        //                                    uniqueID: self.uniqueID)
+        //let specifier = NSNameSpecifier(containerClassDescription: appDescription,
+        //                                containerSpecifier: nil,
+        //                                key: "sessionItem",
+        //                                name: self.name)
+        let specifier = NSPropertySpecifier(containerClassDescription: appDescription,
                                             containerSpecifier: nil,
-                                            key: self.name,
-                                            uniqueID: self.uniqueID)
+                                            key: "sessionItem")
         return specifier
     }
     
