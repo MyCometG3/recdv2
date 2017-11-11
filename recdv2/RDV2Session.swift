@@ -148,6 +148,9 @@ class RDV2Session: NSObject {
                 for item in manager.devicesMuxed() {
                     if let newItem = RDV2DeviceInfoMuxed(from: item) {
                         deviceInfoArray.append(newItem)
+                        newItem.contDescription = (self.classDescription as! NSScriptClassDescription)
+                        newItem.contSpecifier = self.objectSpecifier
+                        newItem.contKey = "muxedSrcAvailable"
                     }
                 }
             }
@@ -162,6 +165,9 @@ class RDV2Session: NSObject {
                 for item in manager.devicesVideo() {
                     if let newItem = RDV2DeviceInfoVideo(from: item) {
                         deviceInfoArray.append(newItem)
+                        newItem.contDescription = (self.classDescription as! NSScriptClassDescription)
+                        newItem.contSpecifier = self.objectSpecifier
+                        newItem.contKey = "videoSrcAvailable"
                     }
                 }
             }
@@ -176,6 +182,9 @@ class RDV2Session: NSObject {
                 for item in manager.devicesAudio() {
                     if let newItem = RDV2DeviceInfoAudio(from: item) {
                         deviceInfoArray.append(newItem)
+                        newItem.contDescription = (self.classDescription as! NSScriptClassDescription)
+                        newItem.contSpecifier = self.objectSpecifier
+                        newItem.contKey = "audioSrcAvailable"
                     }
                 }
             }

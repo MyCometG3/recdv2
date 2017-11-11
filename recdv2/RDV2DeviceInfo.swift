@@ -93,12 +93,18 @@ class RDV2DeviceInfo: NSObject {
     var name: String = ""
     var uniqueID: String = UUID().uuidString
     
+    var contDescription : NSScriptClassDescription? = nil
+    var contSpecifier : NSScriptObjectSpecifier? = nil
+    var contKey : String? = nil
     override var objectSpecifier: NSScriptObjectSpecifier? {
-        let appDescription = NSApp.classDescription as! NSScriptClassDescription
-        let specifier = NSUniqueIDSpecifier(containerClassDescription: appDescription,
-                                            containerSpecifier: nil,
-                                            key: self.name,
-                                            uniqueID: self.uniqueID)
+        //let specifier = NSUniqueIDSpecifier(containerClassDescription: contDescription!,
+        //                                    containerSpecifier: contSpecifier,
+        //                                    key: contKey!,
+        //                                    uniqueID: self.uniqueID)
+        let specifier = NSNameSpecifier(containerClassDescription: contDescription!,
+                                        containerSpecifier: contSpecifier,
+                                        key: contKey!,
+                                        name: self.name)
         return specifier
     }
     
