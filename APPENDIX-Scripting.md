@@ -68,10 +68,10 @@
     end tell
 
     tell application "recdv2"
-      duration in seconds of currentRecording'
-      start date of currentRecording'
-      end date of currentRecording'
-      file of currentRecording'
+      duration in seconds of currentRecording
+      start date of currentRecording
+      end date of currentRecording
+      file of currentRecording
     end tell
 
 Copyright © 2016-2017年 MyCometG3. All rights reserved.
