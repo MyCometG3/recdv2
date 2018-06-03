@@ -15,22 +15,23 @@
 		1650B2BD1D6028710060B838 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1650B2BB1D6028710060B838 /* MainMenu.xib */; };
 		1650B2C51D6028E80060B838 /* recdv2.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 1650B2C41D6028E80060B838 /* recdv2.sdef */; };
 		1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166343891D7803F200FE4F5D /* AVFoundation.framework */; };
-		1652C97E1D7AAF0F009C84B1 /* AVCaptureManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */; };
-		1652C97F1D7AAF0F009C84B1 /* AVCaptureManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16606B0D1D967EED002CFDAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606B0C1D967EED002CFDAF /* Constants.swift */; };
 		1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1663438B1D7803FC00FE4F5D /* Cocoa.framework */; };
 		1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */; };
+		16D14BA220C3EE730095890A /* AVCaptureManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D14BA120C3EE730095890A /* AVCaptureManager.framework */; };
+		16D14BA320C3EE730095890A /* AVCaptureManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16D14BA120C3EE730095890A /* AVCaptureManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		16F99E531D77B56700C00D4A /* CopyFiles */ = {
+		16D14BA420C3EE730095890A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1652C97F1D7AAF0F009C84B1 /* AVCaptureManager.framework in CopyFiles */,
+				16D14BA320C3EE730095890A /* AVCaptureManager.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		166343891D7803F200FE4F5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1663438B1D7803FC00FE4F5D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2DeviceInfo.swift; sourceTree = "<group>"; };
+		16D14BA120C3EE730095890A /* AVCaptureManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AVCaptureManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1652C97E1D7AAF0F009C84B1 /* AVCaptureManager.framework in Frameworks */,
 				1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */,
+				16D14BA220C3EE730095890A /* AVCaptureManager.framework in Frameworks */,
 				1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +71,7 @@
 		1650B2AB1D6028710060B838 = {
 			isa = PBXGroup;
 			children = (
+				16D14BA120C3EE730095890A /* AVCaptureManager.framework */,
 				166343901D78041D00FE4F5D /* Frameworks */,
 				1650B2B61D6028710060B838 /* recdv2 */,
 				1650B2B51D6028710060B838 /* Products */,
@@ -120,7 +123,7 @@
 				1650B2B01D6028710060B838 /* Sources */,
 				1650B2B11D6028710060B838 /* Frameworks */,
 				1650B2B21D6028710060B838 /* Resources */,
-				16F99E531D77B56700C00D4A /* CopyFiles */,
+				16D14BA420C3EE730095890A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,7 +141,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Takashi Mochizuki";
 				TargetAttributes = {
 					1650B2B31D6028710060B838 = {
@@ -219,12 +222,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -273,12 +278,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
