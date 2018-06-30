@@ -37,8 +37,8 @@ including A/V mixed connection like DV.
 
 #### Development environment
 - MacOS X 10.13.5 High Sierra
-- Xcode 9.4.0
-- Swift 4.1.0
+- Xcode 9.4.1
+- Swift 4.1.2
 
 #### License
 - 3-clause BSD license
