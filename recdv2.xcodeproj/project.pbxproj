@@ -18,18 +18,18 @@
 		16606B0D1D967EED002CFDAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606B0C1D967EED002CFDAF /* Constants.swift */; };
 		1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1663438B1D7803FC00FE4F5D /* Cocoa.framework */; };
 		1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */; };
-		16D14BA220C3EE730095890A /* AVCaptureManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16D14BA120C3EE730095890A /* AVCaptureManager.framework */; };
-		16D14BA320C3EE730095890A /* AVCaptureManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16D14BA120C3EE730095890A /* AVCaptureManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16E8E01F20E7010D00B6A4DE /* AVCaptureManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8E01C20E700ED00B6A4DE /* AVCaptureManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16E8E02020E702E100B6A4DE /* AVCaptureManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E8E01C20E700ED00B6A4DE /* AVCaptureManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		16D14BA420C3EE730095890A /* Embed Frameworks */ = {
+		16E8E01A20E6FE4000B6A4DE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				16D14BA320C3EE730095890A /* AVCaptureManager.framework in Embed Frameworks */,
+				16E8E01F20E7010D00B6A4DE /* AVCaptureManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,12 +46,11 @@
 		1650B2BC1D6028710060B838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1650B2BE1D6028710060B838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1650B2C41D6028E80060B838 /* recdv2.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = recdv2.sdef; sourceTree = "<group>"; };
-		1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVCaptureManager.framework; path = Frameworks/AVCaptureManager.framework; sourceTree = SOURCE_ROOT; };
 		16606B0C1D967EED002CFDAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		166343891D7803F200FE4F5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1663438B1D7803FC00FE4F5D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2DeviceInfo.swift; sourceTree = "<group>"; };
-		16D14BA120C3EE730095890A /* AVCaptureManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AVCaptureManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E8E01C20E700ED00B6A4DE /* AVCaptureManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVCaptureManager.framework; path = Frameworks/AVCaptureManager.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */,
-				16D14BA220C3EE730095890A /* AVCaptureManager.framework in Frameworks */,
+				16E8E02020E702E100B6A4DE /* AVCaptureManager.framework in Frameworks */,
 				1663438C1D7803FC00FE4F5D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +70,6 @@
 		1650B2AB1D6028710060B838 = {
 			isa = PBXGroup;
 			children = (
-				16D14BA120C3EE730095890A /* AVCaptureManager.framework */,
 				166343901D78041D00FE4F5D /* Frameworks */,
 				1650B2B61D6028710060B838 /* recdv2 */,
 				1650B2B51D6028710060B838 /* Products */,
@@ -106,7 +104,7 @@
 		166343901D78041D00FE4F5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1652C97D1D7AAF0F009C84B1 /* AVCaptureManager.framework */,
+				16E8E01C20E700ED00B6A4DE /* AVCaptureManager.framework */,
 				1663438B1D7803FC00FE4F5D /* Cocoa.framework */,
 				166343891D7803F200FE4F5D /* AVFoundation.framework */,
 			);
@@ -123,7 +121,7 @@
 				1650B2B01D6028710060B838 /* Sources */,
 				1650B2B11D6028710060B838 /* Frameworks */,
 				1650B2B21D6028710060B838 /* Resources */,
-				16D14BA420C3EE730095890A /* Embed Frameworks */,
+				16E8E01A20E6FE4000B6A4DE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

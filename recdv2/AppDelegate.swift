@@ -111,7 +111,7 @@ class CustomCommand: NSScriptCommand {
 
 @NSApplicationMain
 @objcMembers
-class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutManager {
+class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutManager, NSWindowDelegate {
     override func application(_ sender: NSApplication, delegateHandlesKey key: String) -> Bool {
         // print("\(#file) \(#line) \(#function)")
         
@@ -331,6 +331,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
         window.titleVisibility = .hidden
         _ = window.setFrameAutosaveName(NSWindow.FrameAutosaveName(Keys.previewWindow))
         window.makeKeyAndOrderFront(self)
+        window.delegate = self
         
         // Update Toolbar button title
         setVolume(-1)                       // Update Popup Menu Selection
@@ -1074,6 +1075,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
     // MARK: - Window resizing support
     /* ======================================================================================== */
     
+    func windowDidResize(_ notification: Notification) {
+        // print("\(#file) \(#line) \(#function)")
+        if let layer = self.parentView.layer  {
+            layoutSublayers(of: layer)
+        }
+    }
+
     private func setAspectRatio(_ ratioTag: Int) {
         // print("\(#file) \(#line) \(#function)")
         
