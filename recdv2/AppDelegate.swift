@@ -112,7 +112,7 @@ class CustomCommand: NSScriptCommand {
 @NSApplicationMain
 @objcMembers
 class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutManager, NSWindowDelegate {
-    override func application(_ sender: NSApplication, delegateHandlesKey key: String) -> Bool {
+    func application(_ sender: NSApplication, delegateHandlesKey key: String) -> Bool {
         // print("\(#file) \(#line) \(#function)")
         
         let supportedParameter = [Keys.sessionItem, Keys.recordingItem, Keys.folderURL,
