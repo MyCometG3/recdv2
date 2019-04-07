@@ -36,5 +36,7 @@
 	<string>NSApplication</string>
 	<key>OSAScriptingDefinition</key>
 	<string>recdv2.sdef</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access DV Device to capture</string>
 </dict>
 </plist>
