@@ -51,6 +51,7 @@
 		1663438B1D7803FC00FE4F5D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2DeviceInfo.swift; sourceTree = "<group>"; };
 		16AD907B2259BE9200338A34 /* AVCaptureManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AVCaptureManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16DF1E4322DC295A00AB7696 /* recdv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = recdv2.entitlements; sourceTree = "<group>"; };
 		16E8E01C20E700ED00B6A4DE /* AVCaptureManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVCaptureManager.framework; path = Frameworks/AVCaptureManager.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +90,7 @@
 		1650B2B61D6028710060B838 /* recdv2 */ = {
 			isa = PBXGroup;
 			children = (
+				16DF1E4322DC295A00AB7696 /* recdv2.entitlements */,
 				16606B0C1D967EED002CFDAF /* Constants.swift */,
 				1650B2B71D6028710060B838 /* AppDelegate.swift */,
 				162835EF1D67B71C0097C61D /* RDV2Session.swift */,
@@ -146,7 +148,14 @@
 				TargetAttributes = {
 					1650B2B31D6028710060B838 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = BV5C4YNA4Z;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -320,7 +329,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = recdv2/recdv2.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BV5C4YNA4Z;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/recdv2",
@@ -330,6 +344,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycometg3.recdv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -338,7 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = recdv2/recdv2.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BV5C4YNA4Z;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/recdv2",
@@ -348,6 +368,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mycometg3.recdv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.2</string>
+	<string>1.1.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -28,6 +28,8 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Access DV Device to capture</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016-2019 MyCometG3. All rights reserved.</string>
 	<key>NSMainNibFile</key>
@@ -36,7 +38,5 @@
 	<string>NSApplication</string>
 	<key>OSAScriptingDefinition</key>
 	<string>recdv2.sdef</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Access DV Device to capture</string>
 </dict>
 </plist>
