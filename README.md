@@ -36,8 +36,8 @@ including A/V mixed connection like DV.
 - SMPTE timecode ready (* Depends on video source)
 
 #### Development environment
-- MacOS X 10.14.5 Mojave
-- Xcode 10.2.1
+- MacOS X 10.14.6 Mojave
+- Xcode 10.3
 - Swift 5.0.1
 
 #### License
