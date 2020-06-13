@@ -74,7 +74,7 @@ class RDV2Session: NSObject {
             return defaults.bool(forKey: Keys.useMuxed)
         }
         set {
-            return defaults.set(muxed, forKey: Keys.useMuxed)
+            return defaults.set(newValue, forKey: Keys.useMuxed)
         }
     }
     
