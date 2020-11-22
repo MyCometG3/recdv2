@@ -2,11 +2,12 @@
 
 recdv2 is a simple, audio/video capture application.
 
-- __Requirement__: MacOS X 10.11 or later.
+- __Requirement__: MacOS X 10.13 or later.
 - __Capture Device__: Any AV devices compatible with AVCapture.framework,
 including A/V mixed connection like DV.
 - __Framework__ AVCaptureManager.framework. (Embedded)
 - __Restriction__: Video-only or Audio-only recording are not supported.
+- __Architecture__: Universal binary (x86_64 + arm64)
 
 #### Basic feature
 - One click recording
@@ -36,9 +37,9 @@ including A/V mixed connection like DV.
 - SMPTE timecode ready (* Depends on video source)
 
 #### Development environment
-- MacOS X 10.15.5 Catalina
-- Xcode 11.5
-- Swift 5.2
+- MacOS X 10.15.7 Catalina
+- Xcode 12.2
+- Swift 5.3.1
 
 #### License
 - 3-clause BSD license
