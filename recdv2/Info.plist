@@ -6,8 +6,6 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -22,22 +20,24 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.video</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
-	<key>NSAppleScriptEnabled</key>
-	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>Access DV Device to capture</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016-2020 MyCometG3. All rights reserved.</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Access DV Device to capture</string>
+	<string>Copyright © 2016-2022 MyCometG3. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.video</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Access DV Device to capture</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access DV Device to capture</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
 	<key>OSAScriptingDefinition</key>
 	<string>recdv2.sdef</string>
 </dict>
