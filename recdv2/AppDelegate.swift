@@ -744,9 +744,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, CALayerDelegate, CALayoutMan
             }
             manager.sampleTimescaleVideo = Int32(timeScale)
             manager.encodeProRes422 = !useH264
-            manager.videoStyle = VideoStyle(rawValue: videoStyle)! //.SD_720_480_16_9
-            manager.clapHOffset = clapOffsetH
-            manager.clapVOffset = clapOffsetV
+            manager.resetVideoStyle(VideoStyle(rawValue: videoStyle)!,
+                                    hOffset: clapOffsetH, vOffset: clapOffsetV)
             
             // Start recording to specified URL
             manager.startRecording(to: movieURL)
