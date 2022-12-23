@@ -20,6 +20,11 @@
 		1652C97B1D7AAE77009C84B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166343891D7803F200FE4F5D /* AVFoundation.framework */; };
 		16606B0D1D967EED002CFDAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606B0C1D967EED002CFDAF /* Constants.swift */; };
 		16633B9E29544BB1008479FC /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 16633B9D29544BB1008479FC /* LICENSE.txt */; };
+		16633BA3295486AF008479FC /* AppDelegate+Scripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16633BA2295486AF008479FC /* AppDelegate+Scripting.swift */; };
+		16633BA529548A20008479FC /* AppDelegate+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16633BA429548A20008479FC /* AppDelegate+Layout.swift */; };
+		16633BA729548DE8008479FC /* AppDelegate+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16633BA629548DE8008479FC /* AppDelegate+Signal.swift */; };
+		16633BA929554677008479FC /* AppDelegate+StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16633BA829554677008479FC /* AppDelegate+StatusLabel.swift */; };
+		16633BAB2955474E008479FC /* AppDelegate+Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16633BAA2955474E008479FC /* AppDelegate+Volume.swift */; };
 		1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 		1650B2C41D6028E80060B838 /* recdv2.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = recdv2.sdef; sourceTree = "<group>"; };
 		16606B0C1D967EED002CFDAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		16633B9D29544BB1008479FC /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		16633BA2295486AF008479FC /* AppDelegate+Scripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Scripting.swift"; sourceTree = "<group>"; };
+		16633BA429548A20008479FC /* AppDelegate+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Layout.swift"; sourceTree = "<group>"; };
+		16633BA629548DE8008479FC /* AppDelegate+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Signal.swift"; sourceTree = "<group>"; };
+		16633BA829554677008479FC /* AppDelegate+StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+StatusLabel.swift"; sourceTree = "<group>"; };
+		16633BAA2955474E008479FC /* AppDelegate+Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Volume.swift"; sourceTree = "<group>"; };
 		166343891D7803F200FE4F5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1663438B1D7803FC00FE4F5D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDV2DeviceInfo.swift; sourceTree = "<group>"; };
@@ -91,12 +101,14 @@
 		1650B2B61D6028710060B838 /* recdv2 */ = {
 			isa = PBXGroup;
 			children = (
+				16633B9F295485F9008479FC /* Scripting */,
 				16DF1E4322DC295A00AB7696 /* recdv2.entitlements */,
 				16606B0C1D967EED002CFDAF /* Constants.swift */,
 				1650B2B71D6028710060B838 /* AppDelegate.swift */,
-				162835EF1D67B71C0097C61D /* RDV2Session.swift */,
-				162835F11D67B72A0097C61D /* RDV2Recording.swift */,
-				1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */,
+				16633BA429548A20008479FC /* AppDelegate+Layout.swift */,
+				16633BA629548DE8008479FC /* AppDelegate+Signal.swift */,
+				16633BA829554677008479FC /* AppDelegate+StatusLabel.swift */,
+				16633BAA2955474E008479FC /* AppDelegate+Volume.swift */,
 				16011DD01D7850E700627CDA /* PrefWindowController.swift */,
 				1650B2C41D6028E80060B838 /* recdv2.sdef */,
 				1650B2B91D6028710060B838 /* Assets.xcassets */,
@@ -104,6 +116,17 @@
 				1650B2BB1D6028710060B838 /* MainMenu.xib */,
 			);
 			path = recdv2;
+			sourceTree = "<group>";
+		};
+		16633B9F295485F9008479FC /* Scripting */ = {
+			isa = PBXGroup;
+			children = (
+				16633BA2295486AF008479FC /* AppDelegate+Scripting.swift */,
+				162835EF1D67B71C0097C61D /* RDV2Session.swift */,
+				162835F11D67B72A0097C61D /* RDV2Recording.swift */,
+				1665235B1D84C6BF00714EBF /* RDV2DeviceInfo.swift */,
+			);
+			path = Scripting;
 			sourceTree = "<group>";
 		};
 		166343901D78041D00FE4F5D /* Frameworks */ = {
@@ -144,7 +167,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Takashi Mochizuki";
 				TargetAttributes = {
 					1650B2B31D6028710060B838 = {
@@ -197,11 +220,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16633BA3295486AF008479FC /* AppDelegate+Scripting.swift in Sources */,
+				16633BA929554677008479FC /* AppDelegate+StatusLabel.swift in Sources */,
 				162835F21D67B72A0097C61D /* RDV2Recording.swift in Sources */,
 				162835F01D67B71C0097C61D /* RDV2Session.swift in Sources */,
 				16011DD11D7850E700627CDA /* PrefWindowController.swift in Sources */,
+				16633BA529548A20008479FC /* AppDelegate+Layout.swift in Sources */,
 				1650B2B81D6028710060B838 /* AppDelegate.swift in Sources */,
+				16633BA729548DE8008479FC /* AppDelegate+Signal.swift in Sources */,
 				1665235C1D84C6BF00714EBF /* RDV2DeviceInfo.swift in Sources */,
+				16633BAB2955474E008479FC /* AppDelegate+Volume.swift in Sources */,
 				16606B0D1D967EED002CFDAF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

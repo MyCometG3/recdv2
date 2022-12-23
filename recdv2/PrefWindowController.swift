@@ -42,7 +42,7 @@ class PreferencesController: NSViewController {
         NotificationCenter.default.post(notification)
     }
     
-    func setup() {
+    private func setup() {
         // Populate Popup Button contents
         if let manager = appDelegate.manager {
             devMuxedArrayController.content = NSMutableArray(array: manager.devicesMuxed())
