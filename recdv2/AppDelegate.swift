@@ -38,6 +38,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                        name: .restartSessionNotificationKey,
                                        object: nil)
         
+        // Register notification observer for Loading Compression Settings
+        notificationCenter.addObserver(self,
+                                       selector: #selector(loadCompressionSettings),
+                                       name: .loadCompressionSettingsNotificationKey,
+                                       object: nil)
+        
         // Register defaults defautl values
         var keyValues:[String:Any] = [:]
         keyValues[Keys.aspectRatio] = 40033    // 40:33 for DV-NTSC
@@ -47,13 +53,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         keyValues[Keys.scaleTag] = -1          // -1:Scale: now%
         
         keyValues[Keys.videoFormat] = 0        // 0:DeviceNative, 2:Transcode
-        keyValues[Keys.videoEncoder] = 1       // 0:H.264, 1:ProRes422
+        keyValues[Keys.videoEncoder] = 1       // 0:H26X, 1:ProRes
         keyValues[Keys.deinterlace] = false    // deinterlace while decoding
         keyValues[Keys.videoStyle] = VideoStyle.SD_720_480_16_9.rawValue
         keyValues[Keys.clapOffsetH] = 0        // SD:+8..-8, HD:+16..-16
         keyValues[Keys.clapOffsetV] = 0        // SD:+8..-8, HD:+16..-16
         keyValues[Keys.videoTimeScale] = 30000 // Video media track time resolution
+        
+        keyValues[Keys.pixelFormatType] = Int(kCMPixelFormat_422YpCbCr8) // 422-8bit or 422 10bit
+        keyValues[Keys.videoFrameRate] = 0     // 0:DeviceNative, n:(1000 * FixedFrameRate)
+        keyValues[Keys.proresEncoderType] = fourCC(avVideoCodecType: .proRes422)
+        keyValues[Keys.videoEncoderType] = fourCC(avVideoCodecType: .h264)
+        keyValues[Keys.videoEncoderProfile] = AVVideoProfileLevelH264High40
+        keyValues[Keys.videoEncoderBitRate] = H264ProfileLevel.HiP_40.maxRate
+        
         keyValues[Keys.audioFormat] = 1        // 1:Decompressed, 2:Transcode
+        
+        keyValues[Keys.audioEncoderType] = Int(kAudioFormatMPEG4AAC)
+        keyValues[Keys.audioEncoderBitRate] = 256*1000
+        keyValues[Keys.audioEncoderStrategy] = bitRateStrategy(tagFor:AVAudioBitRateStrategy_Constant)
+        
         keyValues[Keys.timeCodeFormat] = 0     // 0:None, 32:tmcd, 64:tc64
         
         keyValues[Keys.useMuxed] = true        // Prefer muxed device than separated
@@ -461,23 +480,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
     }
     
-    /* ======================================================================================== */
-    // MARK: - Recording support
-    /* ======================================================================================== */
-    
-    func startRecording(for sec: Int) {
+    func loadCompressionSettings(_ notification: Notification) {
         // print("\(#file) \(#line) \(#function)")
         
-        if let manager = manager, let movieURL = createMovieURL() {
+        if let manager = manager {
             // Read parameters for recording
             let useNative = (defaults.integer(forKey: Keys.videoFormat) == 0)
             let useLPCM = (defaults.integer(forKey: Keys.audioFormat) == 1)
             let deinterlace = defaults.bool(forKey: Keys.deinterlace)
             let timeScale = defaults.integer(forKey: Keys.videoTimeScale)
-            let useH264 = (defaults.integer(forKey: Keys.videoEncoder) == 0)
+            let useH26X = (defaults.integer(forKey: Keys.videoEncoder) == 0)
             let videoStyle = defaults.string(forKey: Keys.videoStyle)!
             let clapOffsetH = defaults.integer(forKey: Keys.clapOffsetH)
             let clapOffsetV = defaults.integer(forKey: Keys.clapOffsetV)
+            
+            let pixelFormatType = defaults.integer(forKey: Keys.pixelFormatType)
+            let videoFrameRate = defaults.integer(forKey: Keys.videoFrameRate)
+            let proresEncoderType = defaults.integer(forKey: Keys.proresEncoderType)
+            let videoEncoderType = defaults.integer(forKey: Keys.videoEncoderType)
+            let videoEncoderProfile = defaults.string(forKey: Keys.videoEncoderProfile)!
+            let videoEncoderBitRate = defaults.integer(forKey: Keys.videoEncoderBitRate)
+            
+            let audioEncoderType = defaults.integer(forKey: Keys.audioEncoderType)
+            let audioEncoderBitRate = defaults.integer(forKey: Keys.audioEncoderBitRate)
+            let audioEncoderStrategy = defaults.integer(forKey: Keys.audioEncoderStrategy)
+            
             let timeCodeFormat = defaults.integer(forKey: Keys.timeCodeFormat)
             
             // Apply parameters for recording
@@ -493,6 +520,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             } else {
                 manager.encodeAudio = true
             }
+            manager.sampleTimescaleVideo = Int32(timeScale)
+            manager.encodeProRes = !useH26X
+            manager.resetVideoStyle(VideoStyle(rawValue: videoStyle)!,
+                                    hOffset: clapOffsetH, vOffset: clapOffsetV)
+            
+            manager.pixelFormatType = CMPixelFormatType(pixelFormatType)
+            if videoFrameRate > 0 {
+                let numerator = CMTimeValue(1000*timeScale/videoFrameRate)
+                let denominator = CMTimeScale(timeScale)
+                manager.sampleDurationVideo = CMTime(value: numerator, timescale: denominator)
+            } else {
+                manager.sampleDurationVideo = nil
+            }
+            manager.proresEncoderType = fourCC(cmVideoCodecType: CMVideoCodecType(proresEncoderType))
+            manager.videoEncoderType = fourCC(cmVideoCodecType: CMVideoCodecType(videoEncoderType))
+            manager.videoEncoderProfile = videoEncoderProfile
+            manager.videoEncoderBitRate = videoEncoderBitRate
+            
+            manager.audioEncodeType = AudioFormatID(audioEncoderType)
+            manager.audioEncoderBitRate = audioEncoderBitRate
+            manager.audioEncoderStrategy = bitRateStrategy(AVAudioFor: audioEncoderStrategy)
+            
             switch timeCodeFormat {
             case 32:
                 manager.timeCodeFormatType = kCMTimeCodeFormatType_TimeCode32
@@ -501,13 +550,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             default:
                 manager.timeCodeFormatType = nil
             }
-            manager.sampleTimescaleVideo = Int32(timeScale)
-            manager.encodeProRes = !useH264
-            manager.resetVideoStyle(VideoStyle(rawValue: videoStyle)!,
-                                    hOffset: clapOffsetH, vOffset: clapOffsetV)
+            
+            //
+            manager.resetCompressionSettings()
+        }
+    }
+    
+    /* ======================================================================================== */
+    // MARK: - Recording support
+    /* ======================================================================================== */
+    
+    func startRecording(for sec: Int) {
+        // print("\(#file) \(#line) \(#function)")
+        
+        if let manager = manager, let movieURL = createMovieURL() {
+            // Load latest compression settings
+            loadCompressionSettings(Notification(name: .loadCompressionSettingsNotificationKey))
             
             // Start recording to specified URL
             manager.startRecording(to: movieURL)
+            
+            if manager.isRecording() == false {
+                NSSound.beep()
+                
+                // Update AppIcon badge to Err state
+                NSApp.dockTile.badgeLabel = "Err"
+
+                print("ERROR: Failed to start recording.")
+                return
+            }
             
             /* ============================================================================== */
             

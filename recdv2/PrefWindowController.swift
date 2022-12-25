@@ -12,12 +12,21 @@ import Cocoa
 
 @objcMembers
 class PreferencesController: NSViewController {
+    
+    /* ======================================================================================== */
+    // MARK: - IBOutlet
+    /* ======================================================================================== */
+    
     @IBOutlet weak var devMuxedArrayController: NSArrayController!
     @IBOutlet weak var devVideoArrayController: NSArrayController!
     @IBOutlet weak var devAudioArrayController: NSArrayController!
     
     @IBOutlet weak var prefWindow: NSWindow!
     @IBOutlet weak var appDelegate: AppDelegate!
+    
+    /* ======================================================================================== */
+    // MARK: - IBAction
+    /* ======================================================================================== */
     
     @IBAction func showPreferences(_ sender: AnyObject) {
         prefWindow.makeKeyAndOrderFront(self)
@@ -41,6 +50,18 @@ class PreferencesController: NSViewController {
                                         userInfo: userInfo)
         NotificationCenter.default.post(notification)
     }
+    
+    @IBAction func resetCompressSettings(_ sender: AnyObject) {
+        // Post notification
+        let notification = Notification(name: .loadCompressionSettingsNotificationKey,
+                                        object:self,
+                                        userInfo: nil)
+        NotificationCenter.default.post(notification)
+    }
+    
+    /* ======================================================================================== */
+    // MARK: - Misc support
+    /* ======================================================================================== */
     
     private func setup() {
         // Populate Popup Button contents

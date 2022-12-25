@@ -33,6 +33,7 @@ extension Notification.Name {
     static let recordingStoppedNotificationKey = NSNotification.Name("RecordingStoppedNotification")
     
     static let restartSessionNotificationKey = Notification.Name("restartSessionNotification")
+    static let loadCompressionSettingsNotificationKey = Notification.Name("loadCompressionSettingsNotification")
 }
 
 /* ======================================================================================== */
@@ -65,7 +66,20 @@ enum Keys {
     static let clapOffsetH = "clapOffsetH"
     static let clapOffsetV = "clapOffsetV"
     static let videoTimeScale = "videoTimeScale"
+    
+    static let pixelFormatType = "pixelFormatType"
+    static let videoFrameRate = "videoFrameRate"
+    static let proresEncoderType = "proresEncoderType"
+    static let videoEncoderType = "videoEncoderType"
+    static let videoEncoderProfile = "videoEncoderProfile"
+    static let videoEncoderBitRate = "videoEncoderBitRate"
+    
     static let audioFormat = "audioFormat"
+    
+    static let audioEncoderType = "audioEncoderType"
+    static let audioEncoderBitRate = "audioEncoderBitRate"
+    static let audioEncoderStrategy = "audioEncoderStrategy"
+    
     static let timeCodeFormat = "timeCodeFormat"
     
     static let useMuxed = "useMuxed"
