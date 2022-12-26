@@ -97,6 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         _ = window.setFrameAutosaveName(NSWindow.FrameAutosaveName(Keys.previewWindow))
         window.makeKeyAndOrderFront(self)
         window.delegate = self
+        window.isMovableByWindowBackground = true
         
         // Update Toolbar button title
         setVolume(-1)                       // Update Popup Menu Selection
