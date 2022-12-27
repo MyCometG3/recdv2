@@ -1602,51 +1602,56 @@
                                                             <subviews>
                                                                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-kj-g5b">
                                                                     <rect key="frame" x="116" y="101" width="133" height="22"/>
-                                                                    <popUpButtonCell key="cell" type="push" title="MPEG4AAC" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="1633772320" imageScaling="proportionallyDown" inset="2" selectedItem="zA4-Pe-1Ng" id="WXp-YM-7bq">
+                                                                    <popUpButtonCell key="cell" type="push" title="AppleLossless" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" tag="1634492771" imageScaling="proportionallyDown" inset="2" selectedItem="BVU-EJ-KND" id="WXp-YM-7bq">
                                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <menu key="menu" id="jOw-PA-Zun">
                                                                             <items>
-                                                                                <menuItem title="MPEG4AAC" state="on" tag="1633772320" id="zA4-Pe-1Ng">
+                                                                                <menuItem title="AppleLossless" tag="1634492771" toolTip="No bitrate control" id="BVU-EJ-KND">
+                                                                                    <attributedString key="attributedTitle"/>
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="MPEG4AAC_HE" tag="1633772392" id="aGh-1G-7jf">
-                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                </menuItem>
-                                                                                <menuItem title="MPEG4AAC_HE_V2" tag="1633772400" id="Z5D-SX-q5F">
-                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                </menuItem>
-                                                                                <menuItem title="AppleLossless" tag="1634492771" id="BVU-EJ-KND">
+                                                                                <menuItem title="FLAC" tag="1718378851" toolTip="No bitrate control" id="r5p-IB-6Lp">
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
                                                                                 <menuItem isSeparatorItem="YES" id="G64-4l-GlF"/>
-                                                                                <menuItem title="FLAC" tag="1718378851" id="r5p-IB-6Lp">
+                                                                                <menuItem title="MPEG4AAC (64-320K)" state="on" tag="1633772320" id="zA4-Pe-1Ng">
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="AC3" tag="1633889587" id="wMc-o2-pl7">
+                                                                                <menuItem title="MPEG4AAC_HE (32-80K)" tag="1633772392" id="aGh-1G-7jf">
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="EnhancedAC3" tag="1700998451" id="WmW-Wf-gVO">
+                                                                                <menuItem title="MPEG4AAC_HE_V2 (20-48K)" tag="1633772400" toolTip="In:Stereo Out:Mono" id="Z5D-SX-q5F">
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="60958AC3" tag="1667326771" id="aEr-vS-PGU">
+                                                                                <menuItem title="Opus (20-768K)" tag="1869641075" id="rIE-JK-pMz">
                                                                                     <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="AES" tag="1634038579" id="GY5-F3-igW">
-                                                                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                                                                <menuItem isSeparatorItem="YES" id="SYM-Jf-bKW"/>
+                                                                                <menuItem title="AC3" tag="1633889587" hidden="YES" toolTip="No encoder available" id="wMc-o2-pl7">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="MPEGLayer3" tag="778924083" id="L5w-G2-poR">
-                                                                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                                                                <menuItem title="EnhancedAC3" tag="1700998451" hidden="YES" toolTip="No encoder available" id="WmW-Wf-gVO">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="Opus" tag="1869641075" id="rIE-JK-pMz">
-                                                                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                                                                <menuItem title="60958AC3" tag="1667326771" hidden="YES" toolTip="No encoder available" id="aEr-vS-PGU">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
-                                                                                <menuItem title="MPEGD_USAC" tag="1970495843" id="H0w-Dp-p1s">
-                                                                                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                                                                <menuItem title="AES" tag="1634038579" hidden="YES" toolTip="No encoder available" id="GY5-F3-igW">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                </menuItem>
+                                                                                <menuItem title="MPEGD_USAC" tag="1970495843" hidden="YES" toolTip="No encoder available" id="H0w-Dp-p1s">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                </menuItem>
+                                                                                <menuItem title="MPEGLayer3" tag="778924083" hidden="YES" toolTip="No encoder available" id="L5w-G2-poR">
+                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
                                                                                 </menuItem>
                                                                             </items>
                                                                         </menu>
                                                                     </popUpButtonCell>
+                                                                    <connections>
+                                                                        <binding destination="33a-oK-DCZ" name="selectedTag" keyPath="values.audioEncoderType" id="3db-yW-tfr"/>
+                                                                    </connections>
                                                                 </popUpButton>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRZ-kv-RXp">
                                                                     <rect key="frame" x="18" y="106" width="96" height="14"/>
@@ -1679,8 +1684,8 @@
                                                                     <rect key="frame" x="120" y="78" width="97" height="19"/>
                                                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="right" drawsBackground="YES" id="faB-h2-kBd">
                                                                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="KZO-xr-PSh">
-                                                                            <real key="minimum" value="64000"/>
-                                                                            <real key="maximum" value="384000"/>
+                                                                            <real key="minimum" value="16000"/>
+                                                                            <real key="maximum" value="768000"/>
                                                                         </numberFormatter>
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -2189,5 +2194,6 @@
             </constraints>
             <point key="canvasLocation" x="-203" y="816"/>
         </customView>
+        <menuItem isSeparatorItem="YES" id="qEW-HY-w7x"/>
     </objects>
 </document>
