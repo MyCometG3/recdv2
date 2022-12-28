@@ -105,16 +105,21 @@ extension AppDelegate {
                     }
                 }
             } else {
-                // Show when preview is disabled
-                if showAlternate || forceMute {
+                if let manager = manager, let errorStr = manager.lastAVAssetWriterError {
                     visible = true
-                    status = " preview is disabled."
-                    if showAlternate && forceMute {
-                        status = "Video/Audio" + status
-                    } else if showAlternate {
-                        status = "Video" + status
-                    } else if forceMute {
-                        status = "Audio" + status
+                    status = errorStr
+                } else {
+                    // Show when preview is disabled
+                    if showAlternate || forceMute {
+                        visible = true
+                        status = " preview is disabled."
+                        if showAlternate && forceMute {
+                            status = "Video/Audio" + status
+                        } else if showAlternate {
+                            status = "Video" + status
+                        } else if forceMute {
+                            status = "Audio" + status
+                        }
                     }
                 }
             }
