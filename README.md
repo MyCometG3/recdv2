@@ -11,8 +11,6 @@ including A/V mixed connection like DV.
 - __Restriction__: Progressive/Frame based video is supported but Field based video is not supported.
 - __Architecture__: Universal binary (x86_64 + arm64)
 
-#### NOTE: No binary is available for version 2.0.0b yet.
-
 #### Basic feature
 - One click recording
 - One click preview for Video/Audio
