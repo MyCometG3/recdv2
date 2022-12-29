@@ -424,6 +424,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             _ = manager.openSessionForUniqueID(muxed: useMuxed ? muxedID : nil,
                                                video: useMuxed ? nil : videoID,
                                                audio: useMuxed ? nil : audioID)
+            
+            manager.updateVideoSettings = { (videoOutputSettings) in
+                //
+                let compressionProperties = videoOutputSettings[AVVideoCompressionPropertiesKey] as? [String:Any]
+                if let compressionProperties = compressionProperties {
+                    //
+                    let defaults = UserDefaults.standard
+                    let bitRate = compressionProperties[AVVideoAverageBitRateKey] as? Int
+                    let profile = compressionProperties[AVVideoProfileLevelKey] as? String
+                    if let bitRate = bitRate {
+                        DispatchQueue.main.async {
+                            defaults.set(bitRate, forKey: Keys.videoEncoderBitRate)
+                        }
+                    }
+                    if let profile = profile {
+                        DispatchQueue.main.async {
+                            defaults.set(profile, forKey: Keys.videoEncoderProfile)
+                        }
+                    }
+                }
+            }
+            manager.updateAudioSettings = { (audioOutputSettings) in
+                //
+                let defaults = UserDefaults.standard
+                let bitRate = audioOutputSettings[AVEncoderBitRateKey]
+                if let bitRate = bitRate {
+                    DispatchQueue.main.async {
+                        defaults.set(bitRate, forKey: Keys.audioEncoderBitRate)
+                    }
+                }
+            }
         }
     }
     
@@ -431,6 +462,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // print("\(#file) \(#line) \(#function)")
         
         if let manager = manager {
+            manager.updateVideoSettings = nil
+            manager.updateAudioSettings = nil
+            
             manager.closeSession()
             self.manager = nil
         }
