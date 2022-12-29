@@ -33,9 +33,9 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Access DV Device to capture</string>
+	<string>Access any UAC/DV device to capture audio stream</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Access DV Device to capture</string>
+	<string>Access any UVC/DV device to capture video stream</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>OSAScriptingDefinition</key>
