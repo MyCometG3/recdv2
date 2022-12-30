@@ -418,9 +418,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         manager = AVCaptureManager()
         if let manager = manager {
             let useMuxed = defaults.bool(forKey: Keys.useMuxed)
+            let audioEncoderBitRate = defaults.integer(forKey: Keys.audioEncoderBitRate)
             
             manager.useMuxed = useMuxed
             manager.usePreset = false
+            manager.audioEncoderBitRate = audioEncoderBitRate
+            
             _ = manager.openSessionForUniqueID(muxed: useMuxed ? muxedID : nil,
                                                video: useMuxed ? nil : videoID,
                                                audio: useMuxed ? nil : audioID)
