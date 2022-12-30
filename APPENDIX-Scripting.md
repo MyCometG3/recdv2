@@ -1,4 +1,4 @@
-## Appendix : Scripting
+### Appendix : Scripting
 
 #### Recording with default folder, default name (date/time)
 
@@ -17,7 +17,7 @@
     end tell
 
     tell application "recdv2"
-      start recording in file "El Capitan:Users:you:Desktop:b.mov"
+      start recording in file "Monterey:Users:you:Desktop:b.mov"
     end tell
 
 #### Recording with duration limit, and Auto Quit
@@ -74,4 +74,4 @@
       file of currentRecording
     end tell
 
-Copyright © 2016-2017年 MyCometG3. All rights reserved.
+Copyright © 2016-2022年 MyCometG3. All rights reserved.
