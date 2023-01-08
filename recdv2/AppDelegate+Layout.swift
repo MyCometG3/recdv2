@@ -23,7 +23,7 @@ extension AppDelegate: NSWindowDelegate, CALayerDelegate, CALayoutManager {
             layoutSublayers(of: layer)
         }
     }
-
+    
     /* ======================================================================================== */
     // MARK: - Scaling support
     /* ======================================================================================== */

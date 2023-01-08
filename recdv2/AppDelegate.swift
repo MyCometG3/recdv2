@@ -371,7 +371,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 
                 //
                 DispatchQueue.main.async(execute: {[unowned self] in
-                        self.startRecording(for: min * 60)
+                    self.startRecording(for: min * 60)
                 })
             }
         })
@@ -613,7 +613,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 
                 // Update AppIcon badge to Err state
                 NSApp.dockTile.badgeLabel = "Err"
-
+                
                 print("ERROR: Failed to start recording.")
                 return
             }
@@ -669,7 +669,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if limitFlag && defaults.bool(forKey: Keys.autoQuit) {
             //
             DispatchQueue.main.async(execute: {[unowned self] in
-                    NSApp.terminate(self)
+                NSApp.terminate(self)
             })
         }
     }

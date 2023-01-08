@@ -11,16 +11,17 @@
 import Cocoa
 
 extension AppDelegate {
-
+    
     /* ======================================================================================== */
     // MARK: - Signal Handler
     /* ======================================================================================== */
-
+    
     func startActivity() {
         Swift.print("\(#file) \(#line) \(#function)")
         let proc : ProcessInfo = ProcessInfo.processInfo
-        let opt : ProcessInfo.ActivityOptions =
-            [.automaticTerminationDisabled, .userInitiated, .latencyCritical]
+        let opt : ProcessInfo.ActivityOptions = [
+            .automaticTerminationDisabled, .userInitiated, .latencyCritical
+        ]
         activityToken = proc.beginActivity(options: opt,
                                            reason: "recdv2 is running")
     }

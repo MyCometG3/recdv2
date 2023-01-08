@@ -18,7 +18,7 @@ extension Notification.Name {
     static let RDV2RecordingChangedKey = Notification.Name("RDV2RecordingChanged")
     
     static let RDV2SessionChangedKey = Notification.Name("RDV2SessionChanged")
-
+    
     static let handleRestartSessionKey = Notification.Name("handleRestartSession")
     static let handleStopRecordingKey = Notification.Name("handleStopRecording")
     static let handleStartRecordingKey = Notification.Name("handleStartRecording")

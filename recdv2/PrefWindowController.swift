@@ -42,7 +42,7 @@ class PreferencesController: NSViewController {
             Keys.uniqueIDMuxed: muxed ?? NSNull(),
             Keys.uniqueIDVideo: video ?? NSNull(),
             Keys.uniqueIDAudio: audio ?? NSNull(),
-            ]
+        ]
         
         // Post notification with userInfo
         let notification = Notification(name: .restartSessionNotificationKey,
