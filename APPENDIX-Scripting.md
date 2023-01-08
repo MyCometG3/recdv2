@@ -74,4 +74,4 @@
       file of currentRecording
     end tell
 
-Copyright © 2016-2022年 MyCometG3. All rights reserved.
+Copyright © 2016-2023年 MyCometG3. All rights reserved.
