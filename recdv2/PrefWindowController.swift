@@ -3,7 +3,7 @@
 //  recdv2
 //
 //  Created by Takashi Mochizuki on 2016/09/01.
-//  Copyright © 2016-2022 MyCometG3. All rights reserved.
+//  Copyright © 2016-2023 MyCometG3. All rights reserved.
 //
 
 /* This software is released under the MIT License, see LICENSE.txt. */
