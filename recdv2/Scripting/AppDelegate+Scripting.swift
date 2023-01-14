@@ -17,7 +17,7 @@ extension NSApplication {
     // MARK: - Cocoa scripting support; for NSApplication extension
     /* ======================================================================================== */
     
-    func handleRestartSession(_ command: NSScriptCommand) {
+    func handleRestartSessionCommand(_ command: CustomCommand) {
         // print("\(#file) \(#line) \(#function)")
         
         // Post notification without userInfo
@@ -27,7 +27,7 @@ extension NSApplication {
         NotificationCenter.default.post(notification)
     }
     
-    func handleStopRecord(_ command: NSScriptCommand) {
+    func handleStopRecordingCommand(_ command: CustomCommand) {
         // print("\(#file) \(#line) \(#function)")
         
         // Post notification without userInfo
@@ -37,7 +37,7 @@ extension NSApplication {
         NotificationCenter.default.post(notification)
     }
     
-    func handleStartRecord(_ command: NSScriptCommand) {
+    func handleStartRecordingCommand(_ command: CustomCommand) {
         // print("\(#file) \(#line) \(#function)")
         
         let fileURL: URL? = command.evaluatedArguments?[Keys.fileURL] as? URL

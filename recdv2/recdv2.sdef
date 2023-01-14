@@ -175,13 +175,13 @@
                 <cocoa key="useAudioPreview"/>
             </property>
             <responds-to command="restart session">
-                <cocoa method="handleRestartSession:"/>
+                <cocoa method="handleRestartSessionCommand:"/>
             </responds-to>
             <responds-to command="stop recording">
-                <cocoa method="handleStopRecord:"/>
+                <cocoa method="handleStopRecordingCommand:"/>
             </responds-to>
             <responds-to command="start recording">
-                <cocoa method="handleStartRecord:"/>
+                <cocoa method="handleStartRecordingCommand:"/>
             </responds-to>
         </class-extension>
         
