@@ -21,7 +21,7 @@ extension NSApplication {
         // print("\(#file) \(#line) \(#function)")
         
         // Post notification without userInfo
-        let notification = Notification(name: .handleRestartSessionKey,
+        let notification = Notification(name: .RDV2RestartSessionCommandKey,
                                         object: self,
                                         userInfo: nil)
         NotificationCenter.default.post(notification)
@@ -31,7 +31,7 @@ extension NSApplication {
         // print("\(#file) \(#line) \(#function)")
         
         // Post notification without userInfo
-        let notification = Notification(name: .handleStopRecordingKey,
+        let notification = Notification(name: .RDV2StopRecordingCommandKey,
                                         object: self,
                                         userInfo: nil)
         NotificationCenter.default.post(notification)
@@ -51,7 +51,7 @@ extension NSApplication {
             Keys.autoQuit : autoQuit as Any
         ]
         
-        let notification = Notification(name: .handleStartRecordingKey,
+        let notification = Notification(name: .RDV2StartRecordingCommandKey,
                                         object: self,
                                         userInfo: userInfo)
         NotificationCenter.default.post(notification)
@@ -145,27 +145,27 @@ extension AppDelegate {
         
         // Register notification observer for Cocoa scripting support
         notificationCenter.addObserver(self,
-                                       selector: #selector(handleRestartSession),
-                                       name: .handleRestartSessionKey,
+                                       selector: #selector(handleRestartSessionNotification),
+                                       name: .RDV2RestartSessionCommandKey,
                                        object: nil)
         notificationCenter.addObserver(self,
-                                       selector: #selector(handleStartRecording),
-                                       name: .handleStartRecordingKey,
+                                       selector: #selector(handleStartRecordingNotification),
+                                       name: .RDV2StartRecordingCommandKey,
                                        object: nil)
         notificationCenter.addObserver(self,
-                                       selector: #selector(handleStopRecording),
-                                       name: .handleStopRecordingKey,
+                                       selector: #selector(handleStopRecordingNotification),
+                                       name: .RDV2StopRecordingCommandKey,
                                        object: nil)
     }
     
-    func handleRestartSession(_ notification: Notification) {
+    func handleRestartSessionNotification(_ notification: Notification) {
         // print("\(#file) \(#line) \(#function)")
         
         // Synchronous operation for Script support
         restartSession(notification)
     }
     
-    func handleStartRecording(_ notification: Notification) {
+    func handleStartRecordingNotification(_ notification: Notification) {
         // print("\(#file) \(#line) \(#function)")
         
         //
@@ -188,7 +188,7 @@ extension AppDelegate {
         startRecording(for:length)
     }
     
-    func handleStopRecording(_ notification: Notification) {
+    func handleStopRecordingNotification(_ notification: Notification) {
         // print("\(#file) \(#line) \(#function)")
         
         // Synchronous operation for Script support

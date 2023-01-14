@@ -53,7 +53,7 @@ class PreferencesController: NSViewController {
     
     @IBAction func resetCompressSettings(_ sender: AnyObject) {
         // Post notification
-        let notification = Notification(name: .loadCompressionSettingsNotificationKey,
+        let notification = Notification(name: .validateCompressionSettingsNotificationKey,
                                         object:self,
                                         userInfo: nil)
         NotificationCenter.default.post(notification)

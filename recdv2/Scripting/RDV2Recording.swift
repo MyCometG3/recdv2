@@ -67,22 +67,22 @@ class RDV2Recording: NSObject {
         
         // Register notification observer for Scripting support
         notificationCenter.addObserver(self,
-                                       selector: #selector(handleStartRecording),
+                                       selector: #selector(handleRecordingStartedNotification),
                                        name: .recordingStartedNotificationKey,
                                        object: nil)
         notificationCenter.addObserver(self,
-                                       selector: #selector(handleStopRecording),
+                                       selector: #selector(handleRecordingStoppedNotification),
                                        name: .recordingStoppedNotificationKey,
                                        object: nil)
     }
     
     func postNotificationOfChanges() {
-        let notification = Notification(name: .RDV2RecordingChangedKey,
+        let notification = Notification(name: .RDV2RecordingStateChangedKey,
                                         object: [Keys.newRecordingData: self])
         notificationCenter.post(notification)
     }
     
-    func handleStartRecording(_ notification: Notification) {
+    func handleRecordingStartedNotification(_ notification: Notification) {
         fileURL = nil
         if let userInfo = notification.userInfo {
             if let item = userInfo[Keys.fileURL] as? URL {
@@ -95,7 +95,7 @@ class RDV2Recording: NSObject {
         running = true
     }
     
-    func handleStopRecording(_ notification: Notification) {
+    func handleRecordingStoppedNotification(_ notification: Notification) {
         endDate = Date()
         running = false
     }

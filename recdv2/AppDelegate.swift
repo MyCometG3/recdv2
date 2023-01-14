@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Register notification observer for Loading Compression Settings
         notificationCenter.addObserver(self,
                                        selector: #selector(loadCompressionSettings),
-                                       name: .loadCompressionSettingsNotificationKey,
+                                       name: .validateCompressionSettingsNotificationKey,
                                        object: nil)
         
         // Register defaults defautl values
@@ -603,7 +603,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let manager = manager, let movieURL = createMovieURL() {
             // Load latest compression settings
-            loadCompressionSettings(Notification(name: .loadCompressionSettingsNotificationKey))
+            loadCompressionSettings(Notification(name: .validateCompressionSettingsNotificationKey))
             
             // Start recording to specified URL
             manager.startRecording(to: movieURL)

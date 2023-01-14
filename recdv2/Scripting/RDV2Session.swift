@@ -183,7 +183,7 @@ class RDV2Session: NSObject {
     }
     
     func postNotificationOfChanges() {
-        let notification = Notification(name: .RDV2SessionChangedKey,
+        let notification = Notification(name: .RDV2SessionStateChangedKey,
                                         object: [Keys.newSessionData: self])
         notificationCenter.post(notification)
     }

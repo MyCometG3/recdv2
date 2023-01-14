@@ -15,13 +15,12 @@ import Foundation
 /* ======================================================================================== */
 
 extension Notification.Name {
-    static let RDV2RecordingChangedKey = Notification.Name("RDV2RecordingChanged")
+    static let RDV2RecordingStateChangedKey = Notification.Name("RDV2RecordingStateChanged")
+    static let RDV2SessionStateChangedKey = Notification.Name("RDV2SessionStateChanged")
     
-    static let RDV2SessionChangedKey = Notification.Name("RDV2SessionChanged")
-    
-    static let handleRestartSessionKey = Notification.Name("handleRestartSession")
-    static let handleStopRecordingKey = Notification.Name("handleStopRecording")
-    static let handleStartRecordingKey = Notification.Name("handleStartRecording")
+    static let RDV2RestartSessionCommandKey = Notification.Name("RDV2RestartSessionCommand")
+    static let RDV2StopRecordingCommandKey = Notification.Name("RDV2StopRecordingCommand")
+    static let RDV2StartRecordingCommandKey = Notification.Name("RDV2StartRecordingCommand")
 }
 
 /* ======================================================================================== */
@@ -29,11 +28,11 @@ extension Notification.Name {
 /* ======================================================================================== */
 
 extension Notification.Name {
-    static let recordingStartedNotificationKey = NSNotification.Name("RecordingStartedNotification")
-    static let recordingStoppedNotificationKey = NSNotification.Name("RecordingStoppedNotification")
+    static let recordingStartedNotificationKey = Notification.Name("recordingStartedNotification")
+    static let recordingStoppedNotificationKey = Notification.Name("recordingStoppedNotification")
     
     static let restartSessionNotificationKey = Notification.Name("restartSessionNotification")
-    static let loadCompressionSettingsNotificationKey = Notification.Name("loadCompressionSettingsNotification")
+    static let validateCompressionSettingsNotificationKey = Notification.Name("validateCompressionSettingsNotification")
 }
 
 /* ======================================================================================== */
